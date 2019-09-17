@@ -14,3 +14,7 @@ yarn-error.log
 /idea
 .idea
 
+package-lock.json
+public/mix-manifest.json
+public/css/app.css
+public/js/app.js
