@@ -21,6 +21,9 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('unit_id');
             $table->string('password');
             $table->timestamps();
+
+            $table->foreign('unit_id')->references('id')->on('units');
+
         });
     }
 
