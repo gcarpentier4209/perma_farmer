@@ -17,10 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
-Route::get('/admin_home', 'AdminController@admin')
+Route::get('/admin/dashboard', 'AdminController@showAdminDashboard')
     ->middleware('admin')
-    ->name('dashboard');
+    ->name('admin.dashboard');
+
+Route::get('/admin/orders', 'AdminController@showOrders')
+    ->middleware('admin')
+    ->name('admin.orders');
 
 
 Route::get('/accueil', 'HomeController@index')->name('home');

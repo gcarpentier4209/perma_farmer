@@ -24,7 +24,7 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         if ( $user->isAdmin() ) {// do your margic here
-            return redirect()->route('dashboard');
+            return redirect()->route('admin.dashboard');
         }
 
         return redirect('/home');

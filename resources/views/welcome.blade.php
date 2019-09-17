@@ -69,7 +69,7 @@
         <div class="top-right links">
             @auth
                 @if(auth()->user()->isAdmin())
-                    <a href="{{ route('dashboard') }}">Dashboard</a>
+                    <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                 @endif
                 <a href="{{ route('home') }}">Home</a>
             @else
