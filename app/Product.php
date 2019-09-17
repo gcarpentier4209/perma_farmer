@@ -35,4 +35,9 @@ class Product extends Model
      */
     protected $casts = [
     ];
+
+    function unit()
+    {
+        return $this->hasOne(Unit::class);
+    }
 }
