@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Dashboard users</div>
 
@@ -15,11 +15,13 @@
                         @endif
 
                         You are logged in uses_orders
+                           <span>{{ Auth::user()->name }}</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
 
 

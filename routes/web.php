@@ -15,21 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware(['admin'])->group(function () {
+    Route::get('/admin/dashboard', 'AdminController@showAdminDashboard')->name('admin.dashboard');;
+    Route::get('/admin/orders', 'AdminController@showOrders')->name('admin.orders');;
+    Route::get('/stock', 'AdminController@showStocks')->name('stock');;
+});
+
 Auth::routes();
 
-Route::get('/admin/dashboard', 'AdminController@showAdminDashboard')
-    ->middleware('admin')
-    ->name('admin.dashboard');
+    Route::get('/accueil', 'HomeController@index')->name('home');
 
-Route::get('/admin/orders', 'AdminController@showOrders')
-    ->middleware('admin')
-    ->name('admin.orders');
+    //Route::get('/nos produits', 'HomeController@index')->name('home');
+    //Route::get('/mon_profil', 'HomeController@index')->name('home');
 
 
-Route::get('/accueil', 'HomeController@index')->name('home');
 
-//Route::get('/nos produits', 'HomeController@index')->name('home');
-//
-//Route::get('/mon_profil', 'HomeController@index')->name('home');
+
 
 
