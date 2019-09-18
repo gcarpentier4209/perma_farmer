@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Stock;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -23,6 +24,6 @@ class AdminController extends Controller
 
     public function showStocks()
     {
-        return view('admin.stock');
+        return view('admin.stock', ['stocks'=>Stock::all()]);
     }
 }

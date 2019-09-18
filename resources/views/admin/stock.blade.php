@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('content')
 <table class="table">
     <thead>
     <tr>
@@ -16,8 +17,8 @@
             <td>{{ $stock->id }}</td>
             <td><strong>{{ $stock->id_product }}</strong></td>
             <td><strong>{{ $stock->stock_quantity }}</strong></td>
-            <td><a class="button is-primary" href="{{ route('stocks.show', $film->id) }}">Voir</a></td>
-            <td><a class="button is-warning" href="{{ route('stocks.edit', $film->id) }}">Modifier</a></td>
+{{--            <td><a class="button is-primary" href="{{ route('stocks.show', $stock->id) }}">Voir</a></td>--}}
+{{--            <td><a class="button is-warning" href="{{ route('stocks.edit', $stock->id) }}">Modifier</a></td>--}}
 {{--            <td>--}}
 {{--                <form action="{{ route('stocks.destroy', $film->id) }}" method="post">--}}
 {{--                    @csrf--}}
@@ -30,3 +31,4 @@
 
     </tbody>
 </table>
+@endsection
