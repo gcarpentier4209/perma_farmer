@@ -521,6 +521,8 @@
 </footer>
 </div>
 </div>
+<!-- Custom scripts for this template -->
+<script src="{{asset('js/app.js')}}"></script>
 </body>
 
 
