@@ -15,14 +15,13 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->unsignedInteger('sales_unit');
-            $table->unsignedInteger('value');
-            $table->unsignedInteger('unit_id');
-            $table->string('password');
+            $table->string('label');
+            $table->string('sales_unit');
+            $table->Decimal('weight');
+//            $table->unsignedInteger('unit_id');
             $table->timestamps();
 
-            $table->foreign('unit_id')->references('id')->on('units');
+//            $table->foreign('unit_id')->references('id')->on('units');
 
         });
     }

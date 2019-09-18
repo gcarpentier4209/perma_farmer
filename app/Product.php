@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Product extends Model
 {
@@ -16,8 +17,8 @@ class Product extends Model
     protected $fillable = [
         'name',
         'sales_unit',
-        'value',
-        'unit_id',
+        'weight',
+      //  'unit_id',
     ];
 
     /**
