@@ -19,4 +19,10 @@ class AdminController extends Controller
     {
         return view('admin.admin_orders');
     }
+
+
+    public function showStocks()
+    {
+        return view('admin.stock');
+    }
 }

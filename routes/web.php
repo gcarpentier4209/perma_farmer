@@ -25,6 +25,11 @@ Route::get('/admin/orders', 'AdminController@showOrders')
     ->middleware('admin')
     ->name('admin.orders');
 
+Route::get('/stock', 'AdminController@showStocks')
+    ->middleware('admin')
+    ->name('stock');
+
+
 
 Route::get('/accueil', 'HomeController@index')->name('home');
 
