@@ -6,7 +6,6 @@
 
 require('./bootstrap');
 require('./jsTheme/agency');
-require('./jsTheme/agency.min');
 require('./jsTheme/contact_me');
 require('./jsTheme/jqBootstrapValidation');
 
