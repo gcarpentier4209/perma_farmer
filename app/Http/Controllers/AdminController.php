@@ -16,9 +16,14 @@ class AdminController extends Controller
         return view('admin.dashboard');
     }
 
-    public function showOrders()
+    public function showClients()
     {
-        return view('admin.admin_orders');
+        return view('admin.admin_clients');
+    }
+
+    public function showOrder()
+    {
+        return view('admin.admin_order');
     }
 
 
