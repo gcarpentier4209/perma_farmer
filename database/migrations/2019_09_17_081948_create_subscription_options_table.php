@@ -15,6 +15,8 @@ class CreateSubscriptionOptionsTable extends Migration
     {
         Schema::create('subscription_options', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('subscription_option_label');
+            $table->float('subscription_price');
             $table->timestamps();
         });
     }

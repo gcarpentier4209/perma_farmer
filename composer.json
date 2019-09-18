@@ -1,12 +1,10 @@
 {
-    "name": "laravel/laravel",
+    "name": "perma_farmer",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Project perma farmer",
     "keywords": [
-        "framework",
-        "laravel"
     ],
-    "license": "MIT",
+    "license": "",
     "require": {
         "php": "^7.2",
         "fideloper/proxy": "^4.0",
