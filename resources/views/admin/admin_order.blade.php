@@ -5,20 +5,16 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header dashboard">Perma-Farmer</div>
+                    <div class="card-header">Dashboard admin</div>
 
-                    <div class="card-body dashboard">
+                    <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
                         @endif
 
-                        <p class="">Sélectionner votre tache</p>
-                        <br>
-                        <a class="btn btn-primary" href="{{route('stock')}}">Gérer les stocks</a>
-                        <br>
-                        <a class="btn btn-primary" href="{{route('admin.orders')}}">Gérer les commandes</a>
+                        You are logged in admin_orders
                     </div>
                 </div>
             </div>
