@@ -15,7 +15,6 @@ class Stock extends Model
      * @var array
      */
     protected $fillable = [
-        'id_product',
         'stock_quantity',
     ];
 
@@ -34,5 +33,11 @@ class Stock extends Model
      */
     protected $casts = [
     ];
+
+
+    function product()
+    {
+        return $this->belongsTo(Product::class, 'id_product');
+    }
 
 }

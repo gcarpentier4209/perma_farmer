@@ -15,10 +15,10 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'label',
         'sales_unit',
         'weight',
-      //  'unit_id',
+        //  'unit_id',
     ];
 
     /**
@@ -40,5 +40,10 @@ class Product extends Model
     function unit()
     {
         return $this->hasOne(Unit::class);
+    }
+
+    function stock()
+    {
+        return $this->hasOne(Stock::class);
     }
 }
