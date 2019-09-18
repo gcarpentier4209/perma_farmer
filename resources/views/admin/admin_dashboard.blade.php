@@ -18,7 +18,7 @@
                         <br>
                         <a class="btn btn-primary" href="{{route('stock')}}">Gérer les stocks</a>
                         <br>
-                        <a class="btn btn-primary" href="{{route('admin.orders')}}">Gérer les commandes</a>
+                        <a class="btn btn-primary" href="{{route('admin.clients')}}">Gérer les commandes</a>
                     </div>
                 </div>
             </div>

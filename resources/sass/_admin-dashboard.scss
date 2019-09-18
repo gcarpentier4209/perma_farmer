@@ -1,0 +1,14 @@
+.card-header.dashboard {
+    text-align: center;
+  }
+  .card-body.dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+  }
+
+  .card-body.dashboard .btn {
+    width: 200px;
+  }
