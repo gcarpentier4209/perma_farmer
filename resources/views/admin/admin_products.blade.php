@@ -1,23 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Dashboard admin</div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Unité de ventes</th>
+            <th scope="col">Unité</th>
+            <th scope="col">Valeur</th>
+            <th scope="col">Ajouter</th>
 
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($products as $product)
+        <tr>
+            <th>{{ $product->id }}</th>
+            <td>{{ $product->name }}</td>
+            <td>{{ $product->sales_unit }}</td>
+            <td>{{ $product->unit_id }}</td>
+            <td>{{ $product->value }}</td>
+            <td>Modifier / Supprimer</td>
 
-                        You are logged in admin_orders
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        </tr>
+        @endforeach
+
+        </tbody>
+    </table>
 @endsection
