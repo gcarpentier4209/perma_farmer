@@ -63,7 +63,7 @@
 
         <!-- Header -->
         <header class="masthead" style="background-image: url('{{ asset('/images/header-bg.jpg')}}');
-        ">
+        " id="page-top">
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in">Bienvenue chez Perma-Farmer !</div>
