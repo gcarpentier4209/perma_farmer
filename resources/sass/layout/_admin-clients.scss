@@ -1,1 +1,14 @@
+.card-body.list-clients ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
 
+.card-body.list-clients li {
+    list-style: none;
+    display: inline-block;
+    width: calc(100% / 5);
+    height: 50px;
+    text-align: center;
+}

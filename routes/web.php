@@ -18,7 +18,10 @@ Route::get('/', function () {
 Route::middleware(['admin'])->group(function () {
     Route::get('/admin/dashboard', 'AdminController@showAdminDashboard')->name('admin.dashboard');;
     Route::get('/admin/clients', 'AdminController@showClients')->name('admin.clients');;
-    Route::get('/admin/order', 'AdminController@showOrder')->name('admin.order');;
+    Route::get('/admin/order/{clientId}', 'AdminController@showOrder')->name('admin.order');;
+    Route::patch('/admin/order/{clientId}', 'AdminController@editOrder')->name('admin.order');;
+    Route::post('/admin/order/{clientId}', 'AdminController@saveOrder')->name('admin.order');;
+
     Route::get('/stock', 'AdminController@showStocks')->name('stock');;
 
 
