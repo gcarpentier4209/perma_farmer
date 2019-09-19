@@ -118,8 +118,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">Nos producteurs</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 class="section-heading text-uppercase">Nos produits</h2>
+                <h3 class="section-subheading text-muted">Voici quelques exemples de fruits et légumes que nous proposons. </h3>
             </div>
         </div>
         <div class="row">
@@ -133,8 +133,7 @@
                     <img class="img-fluid" src="{{asset('../resources/img/portfolio/01-thumbnail.jpg')}}" alt="">
                 </a>
                 <div class="portfolio-caption">
-                    <h4>Threads</h4>
-                    <p class="text-muted">Illustration</p>
+                    <h4>Tomates</h4>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 portfolio-item">
@@ -147,8 +146,7 @@
                     <img class="img-fluid" src="{{asset('../resources/img/portfolio/02-thumbnail.jpg')}}" alt="">
                 </a>
                 <div class="portfolio-caption">
-                    <h4>Explore</h4>
-                    <p class="text-muted">Graphic Design</p>
+                    <h4>Carottes</h4>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 portfolio-item">
@@ -161,8 +159,7 @@
                     <img class="img-fluid" src="{{asset('../resources/img/portfolio/03-thumbnail.jpg')}}" alt="">
                 </a>
                 <div class="portfolio-caption">
-                    <h4>Finish</h4>
-                    <p class="text-muted">Identity</p>
+                    <h4>Raisins</h4>
                 </div>
             </div>
         </div>
@@ -186,7 +183,7 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>2015</h4>
+                                    <h4>Septembre 2017</h4>
                                     <h4 class="subheading">Lancement du projet</h4>
                                 </div>
                                 <div class="timeline-body">
@@ -203,7 +200,7 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>Mars 2016</h4>
+                                    <h4>Mars 2018</h4>
                                     <h4 class="subheading">Ouverture du premier magasin Perma-Farmer</h4>
                                 </div>
                                 <div class="timeline-body">
@@ -220,7 +217,7 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>2017</h4>
+                                    <h4>Septembre 2019</h4>
                                     <h4 class="subheading">Lancement du site web</h4>
                                 </div>
                                 <div class="timeline-body">
@@ -372,7 +369,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">Contact Us</h2>
+                <h2 class="section-heading text-uppercase">Nous contacter</h2>
                 <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
         </div>
@@ -382,29 +379,29 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" id="name" type="text" placeholder="Your Name *"
+                                <input class="form-control" id="name" type="text" placeholder="Nom *"
                                 required="required"
-                                data-validation-required-message="Please enter your name.">
+                                data-validation-required-message="Nom requis.">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="email" type="email" placeholder="Your Email *"
+                                <input class="form-control" id="email" type="email" placeholder="Email *"
                                 required="required"
-                                data-validation-required-message="Please enter your email address.">
+                                data-validation-required-message="Adresse Email requis.">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *"
+                                <input class="form-control" id="phone" type="tel" placeholder="Téléphone *"
                                 required="required"
-                                data-validation-required-message="Please enter your phone number.">
+                                data-validation-required-message="Numéro de téléphone requis.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <textarea class="form-control" id="message" placeholder="Your Message *"
+                                <textarea class="form-control" id="message" placeholder="Votre Message *"
                                 required="required"
-                                data-validation-required-message="Please enter a message."></textarea>
+                                data-validation-required-message="Message requis."></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -412,7 +409,7 @@
                         <div class="col-lg-12 text-center">
                             <div id="success"></div>
                             <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase"
-                            type="submit">Send Message
+                            type="submit">Envoyer le message
                         </button>
                     </div>
                 </div>
@@ -427,7 +424,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-4">
-                <span class="copyright">Copyright &copy; Your Website 2019</span>
+                <span class="copyright">Copyright &copy; A9DEV 2019</span>
             </div>
             <div class="col-md-4">
                 <ul class="list-inline social-buttons">
@@ -451,10 +448,10 @@
             <div class="col-md-4">
                 <ul class="list-inline quicklinks">
                     <li class="list-inline-item">
-                        <a href="#">Privacy Policy</a>
+                        <a href="#">Politique de confidentialité</a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#">Terms of Use</a>
+                        <a href="#">Condition d'utilisation</a>
                     </li>
                 </ul>
             </div>
@@ -480,18 +477,13 @@
         <div class="col-lg-8 mx-auto">
           <div class="modal-body">
             <!-- Project Details Go Here -->
-            <h2 class="text-uppercase">Project Name</h2>
+            <h2 class="text-uppercase">Tomates</h2>
             <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-            <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
-            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+            <img class="img-fluid d-block mx-auto" src="{{asset('../resources/img/portfolio/01-thumbnail.jpg')}}" alt="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
             <ul class="list-inline">
-              <li>Date: January 2017</li>
-              <li>Client: Threads</li>
-              <li>Category: Illustration</li>
+              <li>Disponibilité : Juillet - Août - Septembre - Octobre</li>
           </ul>
-          <button class="btn btn-primary" data-dismiss="modal" type="button">
-              <i class="fas fa-times"></i>
-          Close Project</button>
       </div>
   </div>
 </div>
@@ -514,18 +506,13 @@
         <div class="col-lg-8 mx-auto">
           <div class="modal-body">
             <!-- Project Details Go Here -->
-            <h2 class="text-uppercase">Project Name</h2>
+            <h2 class="text-uppercase">Carottes</h2>
             <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-            <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
+            <img class="img-fluid d-block mx-auto" src="{{asset('../resources/img/portfolio/02-thumbnail.jpg')}}" alt="">
             <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
             <ul class="list-inline">
-              <li>Date: January 2017</li>
-              <li>Client: Explore</li>
-              <li>Category: Graphic Design</li>
+              <li>Disponibilité : Toute l'année</li>
           </ul>
-          <button class="btn btn-primary" data-dismiss="modal" type="button">
-              <i class="fas fa-times"></i>
-          Close Project</button>
       </div>
   </div>
 </div>
@@ -547,18 +534,13 @@
         <div class="col-lg-8 mx-auto">
           <div class="modal-body">
             <!-- Project Details Go Here -->
-            <h2 class="text-uppercase">Project Name</h2>
+            <h2 class="text-uppercase">Raisins</h2>
             <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-            <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
+            <img class="img-fluid d-block mx-auto" src="{{asset('../resources/img/portfolio/03-thumbnail.jpg')}}" alt="">
             <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
             <ul class="list-inline">
-              <li>Date: January 2017</li>
-              <li>Client: Finish</li>
-              <li>Category: Identity</li>
+              <li>Disponibilité : Septembre - Octobre</li>
           </ul>
-          <button class="btn btn-primary" data-dismiss="modal" type="button">
-              <i class="fas fa-times"></i>
-          Close Project</button>
       </div>
   </div>
 </div>
