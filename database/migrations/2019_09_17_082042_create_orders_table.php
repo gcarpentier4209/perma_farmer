@@ -18,7 +18,10 @@ class CreateOrdersTable extends Migration
             $table->dateTime('preparation_date');
             $table->dateTime('removal_date');
             $table->string('status');
+            $table->unsignedBigInteger('id_user');
             $table->timestamps();
+
+            $table->foreign('id_user')->references('id')->on('users');
         });
     }
 
