@@ -62,8 +62,8 @@
         </nav>
 
         <!-- Header -->
-        <header class="masthead" style="background-image: url('{{ asset('/images/header-bg.jpg')}}');
-        " id="page-top">
+        <header class="masthead" id="page-top" style="background-image: url('{{ asset('/images/header-bg.jpg')}}');
+        ">
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in">Bienvenue chez Perma-Farmer !</div>
