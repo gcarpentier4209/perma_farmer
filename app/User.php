@@ -51,4 +51,19 @@ class User extends Authenticatable
     public function isAdmin()    {
         return $this->type === self::ADMIN_TYPE;
     }
+
+    function product()
+    {
+        return $this->belongsToMany(Product::class);
+    }
+
+    function subscriptionOption()
+    {
+        return $this->belongsToMany(SubscriptionOption::class);
+    }
+
+    function order()
+    {
+        return $this->belongsToMany(Order::class);
+    }
 }
