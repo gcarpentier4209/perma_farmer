@@ -46,4 +46,14 @@ class Product extends Model
     {
         return $this->hasOne(Stock::class);
     }
+
+    function order()
+    {
+        return $this->belongsToMany(Order::class);
+    }
+
+    function user()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

@@ -28,6 +28,8 @@ Route::middleware(['admin'])->group(function () {
 Auth::routes();
 
     Route::get('/accueil', 'HomeController@index')->name('home');
+    Route::get('/abonnement', 'SubscriptionController@create')->name('create.subscription');
+    Route::post('/abonnement', 'SubscriptionController@store')->name('store.subscription');
 
     //Route::get('/nos produits', 'HomeController@index')->name('home');
     //Route::get('/mon_profil', 'HomeController@index')->name('home');

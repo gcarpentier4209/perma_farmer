@@ -11,4 +11,14 @@ class Order extends Model
         'removal_date',
         'status'
     ];
+
+    function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    function product()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }
