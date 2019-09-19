@@ -1,70 +1,54 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
+@section('content')
+<div class="content">
+    <!-- Header -->
+    <header class="masthead" id="page-top" style="background-image: url('{{ asset('/images/header-bg.jpg')}}');
+    ">
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-lead-in">Bienvenue chez Perma-Farmer !</div>
+            <div class="intro-heading text-uppercase">C'est un plaisir !</div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">S'abonner</a>
+        </div>
+    </div>
+</header>
 
-    <title>Perma-Farmer</title>
-
-    <!-- Custom styles for this template -->
-    <link href="{{asset('css/app.css')}}" rel="stylesheet">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-</head>
-<body>
-    <div class="content">
-        <!-- New Navigation -->
-        <?php // @extend('layouts.nav') ?>
-        <!-- Header -->
-        <header class="masthead" id="page-top" style="background-image: url('{{ asset('/images/header-bg.jpg')}}');
-        ">
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Bienvenue chez Perma-Farmer !</div>
-                <div class="intro-heading text-uppercase">C'est un plaisir !</div>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">S'abonner</a>
+<!-- Services -->
+<section class="page-section" id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase">Nos services</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
         </div>
-    </header>
-
-    <!-- Services -->
-    <section class="page-section" id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading text-uppercase">Nos services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4">
-                  <span class="fa-stack fa-4x">
-                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="service-heading">Des fruits et des légumes locaux et de saison</h4>
-                <p class="text-muted">Ils sont bons mes melons, ils sont ronds mes potirons, mes tomates sont délicates et mes poireaux sont très beaux.</p>
-            </div>
+        <div class="row text-center">
             <div class="col-md-4">
               <span class="fa-stack fa-4x">
                 <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
             </span>
-            <h4 class="service-heading">Sans produits phytosanitaires</h4>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime
-            quam architecto quo inventore harum ex magni, dicta impedit.</p>
+            <h4 class="service-heading">Des fruits et des légumes locaux et de saison</h4>
+            <p class="text-muted">Ils sont bons mes melons, ils sont ronds mes potirons, mes tomates sont délicates et mes poireaux sont très beaux.</p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
         </span>
-        <h4 class="service-heading">Commander en ligne, retirer en magasin</h4>
+        <h4 class="service-heading">Sans produits phytosanitaires</h4>
         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime
         quam architecto quo inventore harum ex magni, dicta impedit.</p>
     </div>
+    <div class="col-md-4">
+      <span class="fa-stack fa-4x">
+        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+        <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+    </span>
+    <h4 class="service-heading">Commander en ligne, retirer en magasin</h4>
+    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime
+    quam architecto quo inventore harum ex magni, dicta impedit.</p>
+</div>
 </div>
 </div>
 </section>
@@ -504,9 +488,4 @@
 </div>
 </div>
 </div>
-
-<!-- Custom scripts for this template -->
-<script src="{{asset('js/app.js')}}"></script>
-</body>
-
-</html>
+@endsection
