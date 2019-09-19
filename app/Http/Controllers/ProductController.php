@@ -38,8 +38,7 @@ class ProductController extends Controller
     public function store(ProductRequest $productRequest)
     {
         Product::create($productRequest->all());
-        //return redirect()->route('products.index')->with('info', 'Le produit a été ajouté ');
-        return view('index', compact('products'));
+        return redirect()->route('product')->with('info', 'Le produit a été ajouté ');
     }
 
     /**
@@ -59,10 +58,12 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+
+    public function edit(Product $product)
     {
-        //
+        return view('admin.EditProduct', compact('product'));
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -71,9 +72,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $productRequest, Product $product)
     {
-        //
+        $product->update($productRequest->all());
+        return redirect()->route('product')->with('info', 'Le produit a bien été modifié');
     }
 
     /**
