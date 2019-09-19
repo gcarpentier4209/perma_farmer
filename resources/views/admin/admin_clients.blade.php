@@ -21,7 +21,7 @@
                             <li>{{ $client->first_name}}</li>
                             <li>{{ $client->last_name}}</li>
                             <li>A préparer</li>
-                            <li><a href="{{route('admin.order', $client->id)}}" class="btn btn-primary btn-sm">Voir</a></li>
+                            <li><a href="{{route('admin.show.orders', $client->id)}}" class="btn btn-primary btn-sm">Voir</a></li>
                         </ul>
                         @endforeach
                     </div>

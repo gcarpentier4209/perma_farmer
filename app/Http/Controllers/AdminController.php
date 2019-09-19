@@ -24,22 +24,50 @@ class AdminController extends Controller
         return view('admin.admin_clients', compact('clients'));
     }
 
-    public function showOrder($clientId)
+    public function showAllOrders($clientId)
     {
         /**
-         * Show the profile and son order for the given client.
+         * Show the profile and all orders for the given client.
          *
          * @param  int  $clientId
          * @return View
          */
-        // todo: get order information with clientId
-        $clients = User::findOrFail($clientId);
-        $order = Order::where('id_user', $clientId) -> first(); //quand status est livré, delete record
-        $products = Product::where('id_order', $order->id);
-        return view('admin.admin_order', ['users' => User::findOrFail($clientId)]);
+        $client = User::findOrFail($clientId);
+        $orders = $client->orders()->get();
+
+        return view('admin.admin_orders', compact('client', 'orders'));
     }
 
-    public function editOrder($clientId)
+    public function showOrder($orderId)
+    {
+        /**
+         * Show the order status and all products for the given orderId.
+         *
+         * @param  int  $orderId
+         * @return View
+         */
+
+        $order = Order::findOrFail($orderId);
+        $products = $order->products()->get();
+        return view('admin.admin_order', compact('order', 'products'));
+    }
+
+    public function deleteOrder($orderId)
+    {
+        /**
+         * Delete the order for the given orderId.
+         *
+         * @param  int  $orderId
+         * @return View
+         */
+
+        $order = Order::findOrFail($orderId);
+        $clientId = $order->id_user;
+        $order->delete();
+        return redirect()->route('admin.show.orders', $clientId);
+    }
+
+    public function editOrder($orderId)
     {
         /**
          * Edit the profile and son order for the given client.

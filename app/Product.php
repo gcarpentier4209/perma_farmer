@@ -47,7 +47,7 @@ class Product extends Model
         return $this->hasOne(Stock::class);
     }
 
-    function order()
+    function orders()
     {
         return $this->belongsToMany(Order::class);
     }
