@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Stock;
 use Illuminate\Http\Request;
+use App\Http\Requests\Stock as StockRequest;
 
 class StockController extends Controller
 {
@@ -25,7 +26,7 @@ class StockController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.CreateStock');
     }
 
     /**
@@ -34,11 +35,13 @@ class StockController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
 
+    public function store(StockRequest $stockRequest)
+    {
+        Stock::create($stockRequest->all());
+        return redirect()->route('stocks.index')->with('info', 'Le produit a été ajouté au stock');
+
+    }
     /**
      * Display the specified resource.
      *
@@ -79,8 +82,9 @@ class StockController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Stock $stock)
     {
-        //
+        $stock->delete();
+        return back()->with('info', 'Ce produit a bien été supprimé du stock.');
     }
 }

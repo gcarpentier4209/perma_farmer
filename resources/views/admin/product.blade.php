@@ -9,7 +9,7 @@
     @endif
     <div class="card">
         <header class="card-header">
-            <a class="btn btn-info" href="{{ route('stocks.create') }}">Ajouter un produit au stock</a>
+            <a class="btn btn-info" href="{{ route('products.create') }}">Ajouter un produit</a>
         </header>
 
         <table class="table table-striped">
@@ -18,24 +18,24 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">libelle produit</th>
-                <th scope="col">Stock produit</th>
+                <th scope="col">unite de vente</th>
+                <th scope="col">poids (en kilogramme)</th>
                 <th scope="col">Actions</th>
                 <th></th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
-            @foreach($stocks as $stock)
+            @foreach($products as $product)
                 <tr>
-                    <td>{{ $stock->id }}</td>
-                    <td>{{ $stock->product->label }}</td>
-                    {{--            @php(dd($stock->product))--}}
-                    {{--            <td><strong>{{ $stock->product()->label }}</strong></td>--}}
-                    <td><strong>{{ $stock->stock_quantity }}</strong></td>
-                    <td><a class="btn btn-primary" href="{{ route('stocks.show', $stock->id) }}">Voir</a></td>
-                    <td><a class="btn btn-warning" href="{{ route('stocks.edit', $stock->id) }}">Modifier</a></td>
+                    <td>{{ $product->id }}</td>
+                    <td><strong>{{ $product->label }}</td>
+                    <td><strong>{{ $product->sales_unit }}<strong></td>
+                    <td><strong>{{ $product->weight }}</strong></td>
+{{--                    <td><a class="btn btn-primary" href="{{ route('products.show', $product->id) }}">Voir</a></td>--}}
+                    <td><a class="btn btn-warning" href="{{ route('products.edit', $product->id) }}">Modifier</a></td>
                     <td>
-                        <form action="{{ route('stocks.destroy', $stock->id) }}" method="post">
+                        <form action="{{ route('products.destroy', $product->id) }}" method="post">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger" type="submit">Supprimer</button>

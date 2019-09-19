@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
+use App\Http\Requests\Product as ProductRequest;
 
 class ProductController extends Controller
 {
@@ -13,7 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        return view('index', compact('products'));
     }
 
     /**
@@ -23,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.CreateProduct');
     }
 
     /**
@@ -32,9 +35,11 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $productRequest)
     {
-        //
+        Product::create($productRequest->all());
+        //return redirect()->route('products.index')->with('info', 'Le produit a été ajouté ');
+        return view('index', compact('products'));
     }
 
     /**
@@ -77,8 +82,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return back()->with('info', 'Ce produit a bien été supprimé!');
     }
 }
