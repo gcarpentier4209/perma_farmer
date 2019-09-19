@@ -44,7 +44,7 @@ class Product extends Model
 
     function stock()
     {
-        return $this->hasOne(Stock::class);
+        return $this->hasOne(Stock::class, 'id_product');
     }
 
     function order()

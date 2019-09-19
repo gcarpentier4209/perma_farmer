@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Stock;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests\Product as ProductRequest;
@@ -37,7 +38,30 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $productRequest)
     {
-        Product::create($productRequest->all());
+        //Product::create($productRequest->all());
+        //return redirect()->route('product')->with('info', 'Le produit a été ajouté ');
+
+        $product = new Product([
+                'label' => $productRequest->get('label'),
+                'sales_unit' => $productRequest->get('sales_unit'),
+                'weight' => $productRequest->get('weight')
+            ]);
+        $product->save();
+
+        $insertedId = $product->id;
+
+        $stock = $product->stock()->create([
+            'id_product' => $insertedId,
+            'stock_quantity' => 0,
+        ]);
+
+//        $stock = new Stock([
+//          //  'id_product' => $insertedId,
+//            'stock_quantity' => 0
+//        ]);
+        //$stock->save();
+
+
         return redirect()->route('product')->with('info', 'Le produit a été ajouté ');
     }
 
