@@ -31,7 +31,7 @@
                     <div class="field">
                         <label class="label">equivalent poids en kilogramme</label>
                         <div class="control">
-                            <input class="input" type="number" name="weight" value="{{ old('weight', $product->weight) }}" min="0" max="1000">
+                            <input class="input" type="float" name="weight" value="{{ old('weight', $product->weight) }}" min="0" max="1000">
                         </div>
                         @error('weight')
                         <p class="help is-danger">{{ $message }}</p>

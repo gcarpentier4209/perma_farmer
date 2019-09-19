@@ -29,7 +29,8 @@
         <div class="p-2" style="position: fixed; background-color: orange; margin-top: 80px">
             <h5>Liens provisoire ADMIN</h5>
             <ul>
-                <li><a class="nav-link" href="#">lien 1</a></li>
+                <li><a class="nav-link" href="{{ route('product') }}">voir les produits</a></li>
+                <li><a class="nav-link" href="{{ route('stock') }}">voir le stock</a></li>
             </ul>
             <h5>Liens provisoire USER</h5>
             <ul>

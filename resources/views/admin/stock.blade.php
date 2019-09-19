@@ -9,7 +9,8 @@
     @endif
     <div class="card">
         <header class="card-header">
-            <a class="btn btn-info" href="{{ route('stocks.create') }}">Ajouter un produit au stock</a>
+            <h4 class="card-title">Stock des produits</h4>
+{{--            <a class="btn btn-info" href="{{ route('stocks.create') }}">Ajouter un produit au stock</a>--}}
         </header>
 
         <table class="table table-striped">
@@ -28,7 +29,7 @@
             @foreach($stocks as $stock)
                 <tr>
                     <td>{{ $stock->id }}</td>
-                    <td>{{ $stock->product->label }}</td>
+{{--                    <td>{{ $stock->product->label }}</td>--}}
                     {{--            @php(dd($stock->product))--}}
                     {{--            <td><strong>{{ $stock->product()->label }}</strong></td>--}}
                     <td><strong>{{ $stock->stock_quantity }}</strong></td>

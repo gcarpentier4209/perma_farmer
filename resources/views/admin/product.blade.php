@@ -9,6 +9,7 @@
     @endif
     <div class="card">
         <header class="card-header">
+            <h4 class="card-title">Liste des produits</h4>
             <a class="btn btn-info" href="{{ route('products.create') }}">Ajouter un produit</a>
         </header>
 
@@ -16,7 +17,7 @@
             <thead>
             <thead class="thead-dark">
             <tr>
-                <th scope="col">#</th>
+{{--                <th scope="col">#</th>--}}
                 <th scope="col">libelle produit</th>
                 <th scope="col">unite de vente</th>
                 <th scope="col">poids (en kilogramme)</th>
@@ -28,7 +29,7 @@
             <tbody>
             @foreach($products as $product)
                 <tr>
-                    <td>{{ $product->id }}</td>
+{{--                    <td>{{ $product->id }}</td>--}}
                     <td><strong>{{ $product->label }}</td>
                     <td><strong>{{ $product->sales_unit }}<strong></td>
                     <td><strong>{{ $product->weight }}</strong></td>

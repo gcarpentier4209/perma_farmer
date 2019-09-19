@@ -39,8 +39,6 @@ class ProductController extends Controller
     public function store(ProductRequest $productRequest)
     {
         //Product::create($productRequest->all());
-        //return redirect()->route('product')->with('info', 'Le produit a été ajouté ');
-
         $product = new Product([
                 'label' => $productRequest->get('label'),
                 'sales_unit' => $productRequest->get('sales_unit'),
@@ -54,13 +52,6 @@ class ProductController extends Controller
             'id_product' => $insertedId,
             'stock_quantity' => 0,
         ]);
-
-//        $stock = new Stock([
-//          //  'id_product' => $insertedId,
-//            'stock_quantity' => 0
-//        ]);
-        //$stock->save();
-
 
         return redirect()->route('product')->with('info', 'Le produit a été ajouté ');
     }
