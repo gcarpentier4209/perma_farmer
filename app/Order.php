@@ -14,11 +14,16 @@ class Order extends Model
 
     function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'id_user');
     }
 
     function products()
     {
         return $this->belongsToMany(Product::class);
+    }
+
+    function subscription()
+    {
+        return $this->belongsTo(Subscription::class);
     }
 }

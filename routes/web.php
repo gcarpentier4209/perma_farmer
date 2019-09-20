@@ -33,6 +33,7 @@ Route::middleware(['admin'])->group(function () {
 
     Route::resource('products', 'ProductController');
     Route::resource('stocks', 'StockController');
+    Route::resource('orders', 'OrderController');
 });
 
 Auth::routes();
@@ -44,6 +45,9 @@ Auth::routes();
     //Route::get('/nos produits', 'HomeController@index')->name('home');
     //Route::get('/mon_profil', 'HomeController@index')->name('home');
 
+Route::resource('user_subscriptions', 'User\SubscriptionController');
+Route::resource('user_subscription_options', 'SubscriptionOptionController');
+Route::resource('user_orders', 'User\OrderController');
 
 
 

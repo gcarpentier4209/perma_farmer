@@ -1,10 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
+use App\Order;
+use App\Subscription;
+use App\SubscriptionOption;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class SubscriptionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +17,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('order.index');
+        //
     }
 
     /**
@@ -23,7 +27,14 @@ class OrderController extends Controller
      */
     public function create()
     {
-//        return view('user.create_subscription');
+
+        $user = auth()->user();
+        $subscription_options = SubscriptionOption::all();
+
+        return view('user.subscriptions.create',[
+            'user'=>$user,
+            'subscription_options'=>$subscription_options
+        ]);
     }
 
     /**
@@ -34,7 +45,33 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = auth()->user();
+        $nb_order =4;
+
+        $subscription = new Subscription([
+        'date_start'=> $request->date_start = now(),
+        'start_end'=> $request->date_end = now()->addMonth(),
+
+    ]);
+
+        $subscription->subscriptionOption()->associate($request->basket_choice);
+        $subscription->user()->associate($user);
+
+        $subscription->save();
+
+        for ($i = 1; $i <= $nb_order; $i++) {
+
+           $order = new Order();
+           $order->user()->associate($user);
+           $order->subscription()->associate($subscription);
+           $order->save();
+        }
+
+
+
+
+        return redirect()->route('user_orders.index');
+
     }
 
     /**

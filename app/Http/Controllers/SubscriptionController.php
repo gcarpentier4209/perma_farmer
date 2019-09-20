@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Subscription;
+use App\SubscriptionOption;
 use Illuminate\Http\Request;
 
 class SubscriptionController extends Controller
@@ -25,8 +27,12 @@ class SubscriptionController extends Controller
     {
 
         $user = auth()->user();
+        $subscription_options = SubscriptionOption::all();
 
-        return view('user.create_subscription',['user'=>$user]);
+        return view('subscriptions.create',[
+            'user'=>$user,
+            'subscription_options'=>$subscription_options
+        ]);
     }
 
     /**
@@ -37,7 +43,17 @@ class SubscriptionController extends Controller
      */
     public function store(Request $request)
     {
-        return 'hello';
+$subscription = new Subscription([
+        'date_start'=> $request->date_start = now(),
+        'start_end'=> $request->date_start = now()->addMonth(),
+
+    ]);
+
+$subscription->subscriptionOption()->associate($request->subscription_option->getKey());
+        $subscription->save();
+
+        return redirect()->route('order.index');
+
     }
 
     /**
