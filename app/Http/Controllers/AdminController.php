@@ -7,6 +7,7 @@ use App\User;
 use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -35,6 +36,7 @@ class AdminController extends Controller
          */
         $client = User::findOrFail($clientId);
         $orders = $client->orders()->get();
+        // dd($orders);
 
         return view('admin.admin_orders', compact('client', 'orders'));
     }
@@ -42,12 +44,11 @@ class AdminController extends Controller
     public function showOrder($orderId)
     {
         /**
-         * Show the order status and all products for the given orderId.
+         * Show the order status and all products for the given order.
          *
          * @param  int  $orderId
          * @return View
          */
-
         $order = Order::findOrFail($orderId);
         $products = $order->products()->get();
         return view('admin.admin_order', compact('order', 'products'));
@@ -68,15 +69,21 @@ class AdminController extends Controller
         return redirect()->route('admin.show.orders', $clientId);
     }
 
-    public function editOrder($orderId)
+    public function updateOrder(Request $request)
     {
         /**
-         * Edit the profile and son order for the given client.
+         * Update order's status for the given order.
          *
-         * @param  int  $clientId
+         * @param  int  $orderId and request
          * @return View
          */
-        return view('admin.admin_order', ['users' => User::findOrFail($clientId)]);
+        // dd($request);
+        $order = Order::findOrFail($request->id);
+        $order->status = $request->status;
+        $order->save();
+        // $status = $request->status;
+        // DB::update('UPDATE orders SET status = ' + $status + ' where id = ' + $orderId, $param);
+        return redirect()->route('admin.show.order', $order->id);
     }
 
 

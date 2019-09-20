@@ -19,7 +19,7 @@ class Order extends Model
 
     function products()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class, 'order_product', 'id_order', 'id_product');
     }
 
     function subscription()
