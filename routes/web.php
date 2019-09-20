@@ -20,7 +20,6 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/clients', 'AdminController@showClients')->name('admin.clients');;
     Route::get('/admin/orders/{clientId}', 'AdminController@showAllOrders')->name('admin.show.orders');; // client info and all orders
     Route::post('/admin/orders/{orderId}', 'AdminController@deleteOrder')->name('admin.delete.order');;
-
     Route::get('/admin/order/{orderId}', 'AdminController@showOrder')->name('admin.show.order');; // order detail
 
     Route::patch('/admin/order/{orderId}', 'AdminController@editOrder')->name('admin.edit.order');; // edit an order
