@@ -9,18 +9,7 @@
 
                     <div class="card-body">
                         <div class="info-client">
-                            <ul>
-                                <li class="label">id</li>
-                                <li class="label">Prénom</li>
-                                <li class="label">Nom</li>
-                                <li class="label">Telephone</li>
-                            </ul>
-                            <ul>
-                                <li>{{$client->id}}</li>
-                                <li>{{$client->first_name}}</li>
-                                <li>{{$client->last_name}}</li>
-                                <li>{{$client->telephone}}</li>
-                            </ul>
+
                         </div>
                         <div class="commandes">
                             <ul>
@@ -30,13 +19,7 @@
                                 <li>{{$order->preparation_date}}</li>
                                 <li>{{$order->removal_date}}</li>
                                 <li><a href="{{route('admin.show.order', $order->id)}}" class="btn btn-primary btn-sm">Edit</a></li>
-                                <li>
-                                <form method="post" action="{{route('admin.delete.order', $order->id)}}">
-                                    {{ csrf_field() }}
-                                    <input type="submit" value="supprimer"" class="btn btn-danger btn-sm" onclick='return confirm("Supprimer ?");'>
-                                </form>
-                                <!-- <a href="{{route('admin.delete.order', $order->id)}}" class="btn btn-danger btn-sm btn-dell">Supprimer</a> -->
-                                </li>
+                                <li><a href="{{route('admin.delete.order', $order->id)}}" class="btn btn-primary btn-sm">Supprimer</a></li>
                             @endforeach
                             </ul>
                         </div>
