@@ -1,16 +1,116 @@
-@extends('layouts.app')
-@section('content')
-<div class="content">
-    <!-- Header -->
-    <header class="masthead" id="page-top" style="background-image: url('{{ asset('/images/header-bg.jpg')}}');
-    ">
-    <div class="container">
-        <div class="intro-text">
-            <div class="intro-lead-in">Bienvenue chez Perma-Farmer !</div>
-            <div class="intro-heading text-uppercase">C'est un plaisir !</div>
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">S'abonner</a>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Perma-Farmer</title>
+
+    <!-- Custom styles for this template -->
+    <link href="{{asset('css/app.css')}}" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
+</head>
+<body>
+    <div class="content">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Perma-Farmer</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#portfolio">Producteurs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#about">Histoire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#team">Équipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+
+        <!-- Admin ou account -->
+        @auth
+        <div class="flex-center position-ref full-height">            
+            @if (Auth::user()->isAdmin())           
+            <a class="nav-link js-scroll-trigger" href="{{ route('admin.dashboard') }}">
+                Admin
+            </a>
+            @endif
+
+            @if (!Auth::user()->isAdmin())
+            <a class="nav-link js-scroll-trigger" href="{{ route('admin.dashboard') }}">
+                Gérer mon abonnement
+            </a>
+            @endif
+        </div>
+        @endauth
+
+        <!-- Authentication Links -->
+        <div class="flex-center position-ref full-height">            
+            @guest
+            @if (Route::has('login'))
+            <div class="top-right links">
+                @auth
+                <a href="{{ url('/home') }}">Home</a>
+                @else
+                <a href="{{ route('login') }}">Login</a>
+
+                @if (Route::has('register'))
+                <a href="{{ route('register') }}">Register</a>
+                @endif
+                @endauth
+            </div>
+            @endif
+            @else
+
+            <!-- Logout -->
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                {{ Auth::user()->name }} <span class="caret"></span>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        </div>
+        @endguest
     </div>
+</nav>
+
+<!-- Header -->
+<header class="masthead" id="page-top" style="background-image: url('{{ asset('/images/header-bg.jpg')}}');
+">
+<div class="container">
+    <div class="intro-text">
+        <div class="intro-lead-in">Bienvenue chez Perma-Farmer !</div>
+        <div class="intro-heading text-uppercase">C'est un plaisir !</div>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">S'abonner</a>
+    </div>
+</div>
 </header>
 
 <!-- Services -->
@@ -419,4 +519,9 @@
 </div>
 </div>
 </div>
-@endsection
+
+<!-- Custom scripts for this template -->
+<script src="{{asset('js/app.js')}}"></script>
+</body>
+
+</html>
