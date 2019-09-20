@@ -31,6 +31,7 @@
             <ul>
                 <li><a class="nav-link" href="{{ route('product') }}">voir les produits</a></li>
                 <li><a class="nav-link" href="{{ route('stock') }}">voir le stock</a></li>
+                <li><a class="nav-link" href="{{ route('admin.clients') }}">voir les clients</a></li>
             </ul>
             <h5>Liens provisoire USER</h5>
             <ul>
