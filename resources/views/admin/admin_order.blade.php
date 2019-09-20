@@ -36,17 +36,17 @@
                                 </tbody>
                             </table>
 
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                                    Etat de cette commande
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#"><span class="fa fa-life-ring"></span> Nageurs</a>
-                                    <a class="dropdown-item" href="#"><span class="fa fa-wrench"></span> Mécaniciens</a>
-                                    <a class="dropdown-item" href="#"><span class="fa fa-rocket"></span> Astronautes</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#"><span class="fa fa-bullhorn"></span> Autres témoignages</a>
-                                </div>
+                            <div class="order-status">
+                                <select size="1" name="message" class="dropdown1">
+                                    <option value="to-prepare">A préparer</option>
+                                    <option value="preparating">Préparation en cours</option>
+                                    <option value="ready">Prêt à retirer</option>
+                                    <option value="pickedup">Retiré</option>
+                                </select>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Enregistrer</button>
+
+                                <div>La commande est prêt ?</div>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Notifier par SMS et Email</button>
                             </div>
 
                         </div>
