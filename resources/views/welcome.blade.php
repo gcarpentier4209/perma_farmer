@@ -71,10 +71,10 @@
                 @auth
                 <a href="{{ url('/home') }}">Home</a>
                 @else
-                <a href="{{ route('login') }}">Login</a>
+                <a href="{{ route('login') }}">Connexion</a>
 
                 @if (Route::has('register'))
-                <a href="{{ route('register') }}">Register</a>
+                <a href="{{ route('register') }}">Inscription</a>
                 @endif
                 @endauth
             </div>
@@ -83,7 +83,7 @@
 
             <!-- Logout -->
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }} <span class="caret"></span>
+                {{ Auth::user()->first_name}} {{Auth::user()->last_name}} <span class="caret"></span>
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
