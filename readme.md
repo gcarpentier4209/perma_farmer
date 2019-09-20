@@ -1,5 +1,5 @@
-#PERMA FARMER
-groupe A9
+# PERMA FARMER
+![A9DEV](A9DEV.png)
 
 # Getting started
 
@@ -58,4 +58,4 @@ Run the database seeder and you're done
     php artisan migrate:refresh --seed
 
 
-![A9DEV](A9DEV.png)
+
