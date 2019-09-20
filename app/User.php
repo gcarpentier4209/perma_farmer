@@ -62,6 +62,11 @@ class User extends Authenticatable
         return $this->belongsToMany(SubscriptionOption::class);
     }
 
+    function subscription()
+    {
+        return $this->hasMany(Subscription::class);
+    }
+
     function orders()
     {
         return $this->hasMany(Order::class, 'id_user');

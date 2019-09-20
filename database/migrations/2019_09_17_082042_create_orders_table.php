@@ -15,14 +15,16 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->dateTime('preparation_date');
-            $table->dateTime('removal_date');
-            //$table->string('status');
+
+            $table->dateTime('preparation_date')->nullable();
+            $table->dateTime('removal_date')->nullable();
             $table->enum('status', ['to do', 'being processed', 'ready', 'collected'])->default('to do');
-            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('id_user')->nullable();
+            $table->unsignedBigInteger('subscription_id')->nullable();
             $table->timestamps();
 
             $table->foreign('id_user')->references('id')->on('users');
+            $table->foreign('subscription_id')->references('id')->on('subscriptions');
         });
     }
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class SubscriptionOptionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('order.index');
+        return view('subscription_options.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-//        return view('user.create_subscription');
+        return view('subscription_options.create');
     }
 
     /**
