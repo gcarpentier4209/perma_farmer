@@ -6,6 +6,15 @@ Mattéo Moisan,
 Mizuho Toxé, 
 Geoffrey Carpentier
 
+# Etat des lieux du travail réalisé
+fonctionnalitées mise en place:
+ site vitrine
+ enregistrement client
+ login/logout 
+ interface admin => gestion des produits (crud) , gestion des stocks (crud),   préparation des commandes client(partiel)
+ interface client => choix de la formule, historique des commandes
+
+
 # Getting started
 
 Find in the Conception folder the MCD and Mockups of the application.
