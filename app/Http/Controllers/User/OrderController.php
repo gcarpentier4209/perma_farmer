@@ -14,7 +14,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('user.orders.index');
+        $client = auth()->user();
+        $orders = $client->orders()->get();
+
+        return view('user.orders.index', compact('client', 'orders'));
     }
 
     /**

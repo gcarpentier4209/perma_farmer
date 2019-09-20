@@ -56,7 +56,7 @@
             @endif
 
             @if (!Auth::user()->isAdmin())
-            <a class="nav-link js-scroll-trigger" href="{{ route('admin.dashboard') }}">
+            <a class="nav-link js-scroll-trigger" href="{{ route('user_orders.index') }}">
                 Gérer mon abonnement
             </a>
             @endif

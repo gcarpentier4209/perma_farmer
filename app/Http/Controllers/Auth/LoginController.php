@@ -26,7 +26,7 @@ class LoginController extends Controller
         if ( $user->isAdmin() ) {// do your margic here
             return redirect()->route('admin.dashboard');
         }else{
-            return redirect()->route('home');
+            return redirect()->route('user_subscriptions.create');
 
         }
     }
