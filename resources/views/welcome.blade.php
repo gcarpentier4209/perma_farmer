@@ -46,29 +46,25 @@
             </div>
         </div>
 
-        <!-- Admin -->
-        <div class="flex-center position-ref full-height">
-            <a id="navbarDropdownAdmin" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+        <!-- Admin ou account -->
+        @auth
+        <div class="flex-center position-ref full-height">            
+            @if (Auth::user()->isAdmin())           
+            <a class="nav-link js-scroll-trigger" href="{{ route('admin.dashboard') }}">
                 Admin
             </a>
+            @endif
 
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownAdmin">
-                <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
-                    Dashboard
-                </a>
-                <a class="dropdown-item" href="{{ route('admin.clients') }}">
-                    Clients
-                </a>
-                <a class="dropdown-item" href="{{ route('stock') }}">
-                    Stock
-                </a>
-                <a class="dropdown-item" href="{{ route('product') }}">
-                    Produits
-                </a>
-            </div>
+            @if (!Auth::user()->isAdmin())
+            <a class="nav-link js-scroll-trigger" href="{{ route('admin.dashboard') }}">
+                Gérer mon abonnement
+            </a>
+            @endif
         </div>
-        <div class="flex-center position-ref full-height">
-            <!-- Authentication Links -->
+        @endauth
+
+        <!-- Authentication Links -->
+        <div class="flex-center position-ref full-height">            
             @guest
             @if (Route::has('login'))
             <div class="top-right links">
