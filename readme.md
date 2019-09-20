@@ -12,7 +12,7 @@ Find in the Conception folder the MCD and Mockups of the application.
 
 ## Installation
 
-Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/5.4/installation#installation)
+Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/6.x/installation)
 
 
 Clone the repository
@@ -44,7 +44,7 @@ Run the database migrations (**Set the database connection in .env before migrat
 You can now access the server at http://localhost:8000
 
     
-**Make sure you set the correct database connection information before running the migrations** [Environment variables](#environment-variables)
+**Make sure you set the correct database connection information before running the migrations** 
 
     php artisan migrate
 
