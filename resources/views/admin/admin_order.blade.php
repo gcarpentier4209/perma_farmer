@@ -3,37 +3,55 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card left">
-                    <div class="card-header">L'information du client et ses commandes</div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Détail de la commande</div>
 
                     <div class="card-body">
-                        <div class="info-client">
+                        <div class="commande">
 
-                        </div>
-                        <div class="commandes">
-                            <ul>
-                            @foreach($orders as $order)
-                                <li>{{$order->id}}</li>
-                                <li>{{$order->status}}</li>
-                                <li>{{$order->preparation_date}}</li>
-                                <li>{{$order->removal_date}}</li>
-                                <li><a href="{{route('admin.show.order', $order->id)}}" class="btn btn-primary btn-sm">Edit</a></li>
-                                <li><a href="{{route('admin.delete.order', $order->id)}}" class="btn btn-primary btn-sm">Supprimer</a></li>
-                            @endforeach
-                            </ul>
+                            <table class="table table-striped">
+                                <thead>
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Produit</th>
+                                    <th scope="col">Quantité</th>
+                                    <th scope="col">Check</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                @foreach($products as $product)
+                                    <tr>
+                                        <td>{{ $product->id }}</td>
+                                        <td>{{ $product->label }}</td>
+                                        <td>{{ $product->stock['stock_quantity']}}</td>
+                                        <!-- <td>{{ $product->pivot->product_quantity }}</td> -->
+                                        <td><input type="checkbox" id="horns" name="horns"></td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                    Etat de cette commande
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#"><span class="fa fa-life-ring"></span> Nageurs</a>
+                                    <a class="dropdown-item" href="#"><span class="fa fa-wrench"></span> Mécaniciens</a>
+                                    <a class="dropdown-item" href="#"><span class="fa fa-rocket"></span> Astronautes</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#"><span class="fa fa-bullhorn"></span> Autres témoignages</a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
-                </div>
-            </div>
-            <div class="col-md-6">
-
-                <div class="card right">
-                    <div class="card-header">Messages</div>
-
-                    <div class="card-body">message
-                    </div>
                 </div>
             </div>
 

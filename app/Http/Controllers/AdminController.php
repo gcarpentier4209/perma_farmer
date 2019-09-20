@@ -35,6 +35,7 @@ class AdminController extends Controller
          */
         $client = User::findOrFail($clientId);
         $orders = $client->orders()->get();
+        // dd($orders);
 
         return view('admin.admin_orders', compact('client', 'orders'));
     }
@@ -42,12 +43,11 @@ class AdminController extends Controller
     public function showOrder($orderId)
     {
         /**
-         * Show the order status and all products for the given orderId.
+         * Show the order status and all products for the given order.
          *
          * @param  int  $orderId
          * @return View
          */
-
         $order = Order::findOrFail($orderId);
         $products = $order->products()->get();
         return view('admin.admin_order', compact('order', 'products'));

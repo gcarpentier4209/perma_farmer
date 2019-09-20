@@ -1,0 +1,27 @@
+.card-body .info-client {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card-body .info-client .column {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body .info-client li.label {
+    list-style: none;
+    display: inline-block;
+    // width: calc(100% / 2);
+    height: 20px;
+    text-align: left;
+}
+
+.card-body .info-client li.value {
+    list-style: none;
+    display: inline-block;
+    width: calc(100% / 2);
+    height: 20px;
+    text-align: center;
+}
