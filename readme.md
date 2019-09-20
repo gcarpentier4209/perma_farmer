@@ -58,4 +58,4 @@ Run the database seeder and you're done
     php artisan migrate:refresh --seed
 
 
-![A9DEV](public\A9DEV.png)
+![A9DEV](A9DEV.png)
