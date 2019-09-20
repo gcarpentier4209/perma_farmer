@@ -17,7 +17,8 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->dateTime('preparation_date');
             $table->dateTime('removal_date');
-            $table->string('status');
+            //$table->string('status');
+            $table->enum('status', ['to do', 'being processed', 'ready', 'collected'])->default('to do');
             $table->unsignedBigInteger('id_user');
             $table->timestamps();
 
