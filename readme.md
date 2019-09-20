@@ -8,6 +8,8 @@ Geoffrey Carpentier
 
 # Getting started
 
+Find in the Conception folder the MCD and Mockups of the application.
+
 ## Installation
 
 Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/5.4/installation#installation)
@@ -53,7 +55,7 @@ Run the database seeder and you're done
 
     php artisan db:seed
     
-Your are an Admin's account example with :
+Your are an Admin account example with :
     
     admin@fake.com
     password
@@ -64,6 +66,8 @@ Your are an Admin's account example with :
 ***Note*** : It's recommended to have a clean database before seeding. You can refresh your migrations at any point to clean the database by running the following command
 
     php artisan migrate:refresh --seed
+    
+
 
 
 
