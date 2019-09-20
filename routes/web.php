@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::middleware(['admin'])->group(function () {
     Route::get('/admin/dashboard', 'AdminController@showAdminDashboard')->name('admin.dashboard');;

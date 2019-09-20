@@ -70,7 +70,7 @@ class SubscriptionController extends Controller
 
 
 
-        return redirect()->route('user_orders.index');
+        return redirect()->route('welcome');
 
     }
 
