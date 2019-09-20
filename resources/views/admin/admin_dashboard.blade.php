@@ -16,6 +16,8 @@
 
                         <p class="">Sélectionner votre tache</p>
                         <br>
+                        <a class="btn btn-primary" href="{{route('product')}}">Gérer les produits</a>
+                        <br>
                         <a class="btn btn-primary" href="{{route('stock')}}">Gérer les stocks</a>
                         <br>
                         <a class="btn btn-primary" href="{{route('admin.clients')}}">Gérer les commandes</a>
