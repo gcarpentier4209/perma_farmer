@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::middleware(['admin'])->group(function () {
     Route::get('/admin/dashboard', 'AdminController@showAdminDashboard')->name('admin.dashboard');;
     Route::get('/admin/orders', 'AdminController@showOrders')->name('admin.orders');;
-    Route::get('/stock', 'AdminController@showStocks')->name('stock');;
+    Route::get('/stock', 'StockController@index')->name('stock');;
     Route::get('/product', 'AdminController@showProducts')->name('product');;
 
     Route::resource('products', 'ProductController');

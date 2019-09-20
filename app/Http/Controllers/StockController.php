@@ -17,7 +17,7 @@ class StockController extends Controller
     {
         $stocks = Stock::all();
         //return view('index', compact('stocks'));
-        return view('admin.ShowStock', compact('stocks'));
+        return view('admin.stock', ['stocks'=> $stocks]);
     }
 
     /**
@@ -75,7 +75,11 @@ class StockController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $stock = Stock::all()->find($id);
+        $stock->update([
+            'stock_quantity' => $request->stock_quantity]);
+        return redirect()->route('stock')->with('info', 'Le produit a été mis à jour');
+
     }
 
     /**
