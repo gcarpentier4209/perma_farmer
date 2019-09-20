@@ -36,14 +36,20 @@
                                 </tbody>
                             </table>
 
+
                             <div class="order-status">
-                                <select size="1" name="message" class="dropdown1">
-                                    <option value="to-prepare">A préparer</option>
-                                    <option value="preparating">Préparation en cours</option>
-                                    <option value="ready">Prêt à retirer</option>
-                                    <option value="pickedup">Retiré</option>
-                                </select>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Enregistrer</button>
+                                <form action='{{ route("admin.update.order", $order->id) }}' method='post'>
+                                    {{ csrf_field() }}
+                                    <input type='hidden' name='id' value='{{ $order->id }}'><br>
+
+                                    <select size="1" name="status" class="dropdown1">
+                                        <option value="A préparer">A préparer</option>
+                                        <option value="Préparation en cours">Préparation en cours</option>
+                                        <option value="Prêt à retirer">Prêt à retirer</option>
+                                        <option value="Retiré">Retiré</option>
+                                    </select>
+                                    <input type='submit' class="btn btn-primary" value='Enregistrer'>
+                                </form>
 
                                 <div>La commande est prêt ?</div>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Notifier par SMS et Email</button>
