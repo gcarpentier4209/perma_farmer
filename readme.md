@@ -1,9 +1,9 @@
 # PERMA FARMER
 ![A9DEV](A9DEV.png)
 
-Yannik Guillodo
-Mattéo Moisan
-Mizuho Toxé
+Yannik Guillodo, 
+Mattéo Moisan, 
+Mizuho Toxé, 
 Geoffrey Carpentier
 
 # Getting started
